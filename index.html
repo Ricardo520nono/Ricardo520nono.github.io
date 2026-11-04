@@ -1,40 +1,307 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jixian (Ricardo) Wu</title>
-  <meta name="description" content="Jixian (Ricardo) Wu — M.S. in Computer Science at NYU. Research Assistant at Harvard and PKU.">
-  <link rel="canonical" href="https://jixianwu.com/">
-  <style>
-    :root { --bg: #fafaf9; --fg: #1c1917; --muted: #78716c; --link: #2563eb; }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #0c0a09; --fg: #e7e5e4; --muted: #a8a29e; --link: #60a5fa; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jixian (Ricardo) Wu | 吴极限</title>
+<meta name="description" content="Jixian (Ricardo) Wu is a Master's student at New York University and a Research Intern at the Harvard AI and Robotics Lab, working on Agentic AI, Embodied AI, World Models, and 3D Vision. Seeking a CS Ph.D. for Fall 2028.">
+<link rel="canonical" href="https://jixianwu.com/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jixian (Ricardo) Wu">
+<meta property="og:description" content="Jixian (Ricardo) Wu is a Master's student at New York University and a Research Intern at the Harvard AI and Robotics Lab, working on Agentic AI, Embodied AI, World Models, and 3D Vision. Seeking a CS Ph.D. for Fall 2028.">
+<meta property="og:url" content="https://jixianwu.com/">
+<meta property="og:image" content="https://jixianwu.com/assets/avatar.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jixian Wu", "alternateName": ["Ricardo Wu", "Jixian (Ricardo) Wu", "吴极限"], "url": "https://jixianwu.com/", "image": "https://jixianwu.com/assets/avatar.jpg", "jobTitle": "Research Intern", "affiliation": [{"@type": "CollegeOrUniversity", "name": "New York University"}, {"@type": "CollegeOrUniversity", "name": "Harvard University"}], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of Electronic Science and Technology of China"}, {"@type": "CollegeOrUniversity", "name": "University of Glasgow"}], "knowsAbout": ["Agentic AI", "Embodied AI", "World Models", "3D Vision", "FinTech"], "sameAs": ["https://github.com/Ricardo520nono", "https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ", "https://www.linkedin.com/in/jixian-wu-6bb066360/"]}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23e07b24'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia' font-size='34' font-weight='700' fill='white'>J</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&text=%E5%90%B4%E6%9E%81%E9%99%90&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e9; --bg-dot: #e9e1d4; --card: #fffdf9; --card-2: #fbf6ee;
+    --ink: #1f1a15; --ink-2: #5b5248; --ink-3: #958a7d; --line: #ebe3d6;
+    --accent: #e07b24; --accent-2: #c9962e; --accent-soft: #fdf0e2; --hl: #fff4c9;
+    --green: #2f8f5b; --green-soft: #e6f4ec; --blue: #3767b8; --blue-soft: #e8eefa; --red: #c2410c;
+    --shadow: 0 1px 2px rgba(60,40,20,.04), 0 6px 24px rgba(60,40,20,.06);
+    --shadow-up: 0 2px 4px rgba(60,40,20,.05), 0 18px 40px rgba(60,40,20,.11);
+    --dark-btn: #1f1a15; --dark-btn-ink: #fffaf2; --header: rgba(246,241,233,.78);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17140f; --bg-dot: #221d17; --card: #201b15; --card-2: #1b1712;
+      --ink: #f3ece2; --ink-2: #c3b8a9; --ink-3: #8a7f72; --line: #2f2820;
+      --accent: #f0943f; --accent-2: #e2b34f; --accent-soft: #3a2614; --hl: #3d3214;
+      --green: #6fcf97; --green-soft: #1d3326; --blue: #8fb3f0; --blue-soft: #1e2a40; --red: #fb923c;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35); --shadow-up: 0 2px 4px rgba(0,0,0,.35), 0 18px 40px rgba(0,0,0,.45);
+      --dark-btn: #f3ece2; --dark-btn-ink: #17140f; --header: rgba(23,20,15,.78);
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center;
-      background: var(--bg); color: var(--fg);
-      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      padding: 16px;
-    }
-    main { max-width: 560px; text-align: center; }
-    img { width: 120px; height: 120px; border-radius: 50%; }
-    h1 { margin: 16px 0 4px; font-size: 28px; }
-    p { margin: 4px 0; color: var(--muted); }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .links { margin-top: 16px; }
-  </style>
+  }
+  :root[data-theme="dark"] {
+    --bg: #17140f; --bg-dot: #221d17; --card: #201b15; --card-2: #1b1712;
+    --ink: #f3ece2; --ink-2: #c3b8a9; --ink-3: #8a7f72; --line: #2f2820;
+    --accent: #f0943f; --accent-2: #e2b34f; --accent-soft: #3a2614; --hl: #3d3214;
+    --green: #6fcf97; --green-soft: #1d3326; --blue: #8fb3f0; --blue-soft: #1e2a40; --red: #fb923c;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35); --shadow-up: 0 2px 4px rgba(0,0,0,.35), 0 18px 40px rgba(0,0,0,.45);
+    --dark-btn: #f3ece2; --dark-btn-ink: #17140f; --header: rgba(23,20,15,.78);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.6 Inter, -apple-system, "PingFang SC", "Noto Sans SC", sans-serif;
+    background-image: radial-gradient(var(--bg-dot) 1px, transparent 1px); background-size: 22px 22px;
+    -webkit-font-smoothing: antialiased; transition: background-color .3s, color .3s;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  .card { background: var(--card); border-radius: 18px; box-shadow: var(--shadow); border: 1px solid var(--line); }
+
+  /* ---------- header ---------- */
+  .topbar { position: sticky; top: 0; z-index: 20; transition: background .25s, box-shadow .25s, backdrop-filter .25s; }
+  .topbar.scrolled { background: var(--header); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); box-shadow: 0 1px 0 var(--line); }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 12px; }
+  .logo { font: 700 54px/1 Caveat, cursive; letter-spacing: .5px; white-space: nowrap; -webkit-text-stroke: .7px currentColor; }
+  .logo b { color: var(--accent); }
+  .links-nav { display: flex; gap: 2px; padding: 4px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); }
+  .links-nav a { font-size: 13.5px; font-weight: 500; color: var(--ink-2); padding: 6px 13px; border-radius: 999px; transition: all .2s; }
+  .links-nav a:hover { color: var(--ink); }
+  .links-nav a.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .nav { display: flex; align-items: center; gap: 8px; }
+  .seg { display: inline-flex; border-radius: 999px; padding: 3px; background: var(--card); border: 1px solid var(--line); }
+  .seg button { border: 0; background: none; color: var(--ink-3); font: 600 12.5px Inter, sans-serif; padding: 5px 10px; border-radius: 999px; cursor: pointer; }
+  .seg button.on { background: var(--bg); color: var(--ink); }
+  .icon-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); color: var(--ink-2); cursor: pointer; display: grid; place-items: center; transition: transform .3s; }
+  .icon-btn:hover { transform: rotate(180deg); }
+  .icon-btn svg { width: 16px; height: 16px; }
+
+  section.block { padding: 56px 0 0; }
+  .block h2 { font: 600 32px/1.2 "Source Serif 4", "Noto Serif SC", serif; letter-spacing: -.3px; margin: 0 0 10px; }
+  .tbu { margin: 0; color: var(--ink-3); font-size: 17.5px; }
+  #top { padding-bottom: 72px; }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; grid-template-columns: 340px 1fr; gap: 48px; padding: 28px 0 8px; align-items: start; }
+  .left { position: sticky; top: 92px; }
+  .avatar-row { position: relative; margin-bottom: 22px; height: 112px; }
+  .avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 4px solid var(--card); box-shadow: var(--shadow); }
+  .avatar-wrap { position: relative; display: inline-block; }
+  .avatar-wrap::after { content: ""; position: absolute; right: 6px; bottom: 8px; width: 16px; height: 16px; border-radius: 50%; background: #34c759; border: 3px solid var(--card); }
+  .bubble { position: absolute; left: 96px; top: -4px; background: var(--card); padding: 10px 16px; border-radius: 16px; font-weight: 600; font-size: 15px; box-shadow: var(--shadow); white-space: nowrap; animation: pop .6s cubic-bezier(.2,1.4,.4,1) .2s both; }
+  .bubble::before { content: ""; position: absolute; left: -6px; bottom: 10px; width: 14px; height: 14px; background: var(--card); transform: rotate(45deg); border-radius: 2px; }
+  .wave { display: inline-block; transform-origin: 70% 70%; animation: wave 2.4s ease-in-out 1s infinite; }
+  @keyframes wave { 0%,60%,100% { transform: rotate(0) } 10%,30% { transform: rotate(14deg) } 20% { transform: rotate(-8deg) } 40% { transform: rotate(-4deg) } 50% { transform: rotate(10deg) } }
+  @keyframes pop { from { opacity: 0; transform: translateY(6px) scale(.9) } to { opacity: 1; transform: none } }
+  .name { font: 600 36px/1.15 "Source Serif 4", serif; letter-spacing: -.3px; margin: 0 0 6px; }
+  .name span { font: 500 .6em/1 "Noto Serif SC", serif; color: var(--ink-3); letter-spacing: .06em; margin-left: 6px; }
+  .status-line { font-size: 12.5px; color: var(--ink-3); margin: 0 0 18px; display: flex; align-items: center; gap: 6px; }
+
+  .tags { display: grid; grid-template-columns: repeat(3, max-content); justify-content: start; gap: 6px 18px; color: var(--ink-2); font-size: 13.5px; font-weight: 500; margin-bottom: 22px; }
+  .tags span::before { content: "•"; color: var(--accent); margin-right: 6px; }
+
+  .socials { display: flex; gap: 10px; margin-bottom: 22px; }
+  .socials a, .socials button { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--card); border: 1px solid var(--line); color: var(--ink-2); transition: all .15s; cursor: pointer; position: relative; padding: 0; }
+  .socials svg { width: 17px; height: 17px; }
+  .socials a:hover, .socials button:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+  [data-tip]:hover::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--dark-btn); color: var(--dark-btn-ink); font: 500 11.5px Inter, sans-serif; padding: 4px 8px; border-radius: 6px; white-space: nowrap; pointer-events: none; }
+
+  .seek { overflow: hidden; margin: 0 -18px 18px; }
+  .seek-row { padding: 16px 17px; }
+  .seek-row.primary { background: var(--accent-soft); border-bottom: 1px solid var(--line); }
+  .seek-t { font-size: 15px; font-weight: 600; line-height: 1.35; letter-spacing: -.1px; margin: 0 0 6px; }
+  .seek-t em { font-style: normal; color: var(--accent); }
+  .seek-d { font-size: 13.5px; line-height: 1.65; color: var(--ink-2); margin: 0; text-wrap: pretty; }
+
+  /* ---------- right column ---------- */
+  .about { max-width: 620px; padding-top: 6px; color: var(--ink-2); font-size: 17.5px; line-height: 1.8; }
+  .about h2 { font: 600 32px/1.2 "Source Serif 4", "Noto Serif SC", serif; letter-spacing: -.3px; color: var(--ink); margin: 0 0 18px; }
+  .about p { margin: 0 0 16px; text-wrap: pretty; }
+  .about p:last-child { margin: 0; }
+  @media (min-width: 921px) {
+    .hero main { align-self: stretch; display: flex; }
+    .about { display: flex; flex-direction: column; justify-content: space-between; padding: 0 0 12px; margin-top: -6px; }
+    .about h2, .about p { margin: 0; }
+    html[lang^="zh"] .about { justify-content: flex-start; gap: 16px; }
+  }
+  .about strong { color: var(--ink); font-weight: 600; }
+  .about a { color: var(--ink); font-weight: 600; transition: color .2s; }
+  .about a:hover { color: var(--accent); }
+
+  .dlg { margin: auto; border: 1px solid var(--line); border-radius: 20px; background: var(--card); color: var(--ink); box-shadow: var(--shadow-up, var(--shadow)); padding: 26px 24px 22px; width: min(440px, calc(100vw - 32px)); }
+  .dlg::backdrop { background: rgba(30,22,14,.35); backdrop-filter: blur(3px); }
+  .dlg[open] { animation: pop .2s ease-out; }
+  .dlg h3 { font: 600 20px/1.2 "Source Serif 4", "Noto Serif SC", serif; margin: 0 0 16px; }
+  .dlg-x { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; border: 0; background: transparent; color: var(--ink-3); font-size: 22px; line-height: 1; cursor: pointer; }
+  .dlg-x:hover { background: var(--card-2); color: var(--ink); }
+  .mail-row { display: grid; grid-template-columns: 64px minmax(0,1fr) auto; align-items: center; gap: 10px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--card-2); margin-top: 8px; }
+  .mail-k { font: 500 12px/1 Inter, "PingFang SC", sans-serif; color: var(--ink-3); }
+  .mail-row a { color: var(--ink); font-weight: 500; font-size: 14px; overflow-wrap: anywhere; }
+  .mail-row a:hover { color: var(--accent); }
+  .copy-btn { border: 1px solid var(--accent); color: var(--accent); background: transparent; border-radius: 999px; padding: 5px 12px; font: 600 12px Inter, sans-serif; cursor: pointer; white-space: nowrap; }
+  .copy-btn:hover, .copy-btn.done { background: var(--accent); color: #fff; }
+  .dlg-qr { width: min(320px, calc(100vw - 32px)); text-align: center; }
+  .dlg-qr img { width: 100%; height: auto; border-radius: 12px; display: block; }
+
+  .js .rv { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .js .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; } .rv { opacity: 1; transform: none; } }
+
+  @media (max-width: 1020px) { .links-nav { display: none; } }
+  @media (max-width: 920px) {
+    .hero { grid-template-columns: 1fr; gap: 32px; }
+    .left { position: static; }
+  }
+  @media (max-width: 640px) {
+    .seek { margin: 0 -16px 18px; border-radius: 0; border-width: 1px 0; }
+    .seek-row { padding: 16px; }
+    .wrap { padding: 0 16px; }
+  }
+</style>
 </head>
 <body>
-  <main>
-    <img src="https://avatars.githubusercontent.com/u/158521375?v=4" alt="Jixian (Ricardo) Wu">
-    <h1>Jixian (Ricardo) Wu</h1>
-    <p>M.S. in Computer Science @ NYU</p>
-    <p>Research Assistant @ Harvard &amp; PKU</p>
-    <p class="links"><a href="https://github.com/Ricardo520nono">GitHub</a></p>
-    <p style="margin-top:24px;font-size:14px">Full site coming soon.</p>
-  </main>
+
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <header>
+      <a class="logo" href="#top">Jixian<b>.</b>Wu</a>
+      <nav class="links-nav" aria-label="Sections">
+        <a class="active" href="#about" data-en="About" data-zh="关于">About</a>
+        <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
+        <a href="#news" data-en="News" data-zh="动态">News</a>
+        <a href="#life" data-en="Life" data-zh="生活">Life</a>
+      </nav>
+      <div class="nav">
+        <div class="seg" role="group" aria-label="Language"><button class="on" data-lang="en">EN</button><button data-lang="zh">中</button></div>
+        <button class="icon-btn" id="theme" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+  <section class="hero" id="about">
+    <!-- LEFT: identity -->
+    <aside class="left">
+      <div class="avatar-row">
+        <span class="avatar-wrap"><img class="avatar" src="assets/avatar.jpg" alt="Jixian (Ricardo) Wu" width="112" height="112"></span>
+        <div class="bubble"><span data-en="Hi, I'm Ricardo" data-zh="你好，我是 Ricardo">Hi, I'm Ricardo</span> <span class="wave">👋</span></div>
+      </div>
+      <h1 class="name">Jixian Wu <span lang="zh-CN">吴极限</span></h1>
+      <p class="status-line" data-en="📍 New York City" data-zh="📍 纽约">📍 New York City</p>
+
+      <div class="tags"><span>Agentic AI</span><span>Embodied AI</span><span>World Model</span><span>3D Vision</span><span>FinTech</span></div>
+
+      <div class="socials">
+        <a href="https://github.com/Ricardo520nono" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ&amp;hl=en" target="_blank" rel="noopener" data-tip="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 9l4 2.6V17c0 1 3.1 3 7 3s7-2 7-3v-5.4L23 9 12 2Zm0 15.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"/></svg></a>
+        <a href="https://www.linkedin.com/in/jixian-wu-6bb066360/" target="_blank" rel="noopener" data-tip="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.06c.53-1 1.84-2.06 3.8-2.06 4.05 0 4.8 2.67 4.8 6.14V21h-4v-5c0-1.2-.02-2.73-1.66-2.73-1.67 0-1.93 1.3-1.93 2.64V21h-4V9.75Z"/></svg></a>
+        <button data-open="mail-dlg" data-tip="Email" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>
+        <button data-open="wechat-dlg" data-tip="WeChat" aria-label="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.1 3.5C4.9 3.5 1.5 6.3 1.5 9.8c0 2 1.1 3.8 2.9 5l-.7 2.2 2.6-1.4c.9.3 1.8.4 2.8.4h.5a5.6 5.6 0 0 1-.2-1.5c0-3.3 3.2-6 7.2-6h.5c-.7-2.9-3.9-5-8-5Zm-2.6 3.3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm5.2 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/><path d="M22.5 14.5c0-2.9-2.9-5.2-6.3-5.2s-6.3 2.3-6.3 5.2 2.9 5.2 6.3 5.2c.7 0 1.4-.1 2.1-.3l2 1.1-.5-1.8c1.6-1 2.7-2.5 2.7-4.2Zm-8.4-1a.8.8 0 1 1 0 1.7.8.8 0 0 1 0-1.7Zm4.2 0a.8.8 0 1 1 0 1.7.8.8 0 0 1 0-1.7Z"/></svg></button>
+      </div>
+
+      <div class="card seek">
+        <div class="seek-row primary">
+          <h2 class="seek-t" data-en="Seeking a CS Ph.D. · <em>Fall 2028</em>" data-zh="正在申请 CS 博士 · <em>2028 Fall</em>">Seeking a CS Ph.D. · <em>Fall 2028</em></h2>
+          <p class="seek-d" data-en="If you have any opportunities or advice,<br>I'd love to hear from you." data-zh="如果你有合适的机会或任何建议，欢迎联系我。">If you have any opportunities or advice,<br>I'd love to hear from you.</p>
+        </div>
+        <div class="seek-row">
+          <h2 class="seek-t" data-en="Open to chats &amp; collaborations" data-zh="欢迎交流与合作">Open to chats &amp; collaborations</h2>
+          <p class="seek-d" data-en="Happy to talk about anything or build something together. Feel free to reach out." data-zh="想聊聊，或想一起做点什么，都欢迎随时找我。">Happy to talk about anything or build something together. Feel free to reach out.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT -->
+    <main>
+      <div class="about rv">
+        <h2 data-en="About Me" data-zh="关于我">About Me</h2>
+        <p data-en="I am currently pursuing a Master's degree at <strong>New York University (NYU)</strong>. Currently, I am a Research Intern at <strong>Harvard University</strong>. I am honored to be supervised by <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> in the <a href='https://wang.hms.harvard.edu/' target='_blank' rel='noopener'>Harvard AI and Robotics Lab</a>. Previously, I was a Research Intern at the <a href='https://github.com/PKU-HMI-Lab' target='_blank' rel='noopener'>Human Machine Intelligence (HMI) Lab</a> at <strong>Peking University</strong> under the guidance of <a href='http://cscsx.cn/' target='_blank' rel='noopener'>Sixiang Chen</a> and <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a>. I received my dual Bachelor's degrees from the University of Electronic Science and Technology of China (UESTC) and the University of Glasgow (UofG)." data-zh="我在<strong>纽约大学（NYU）</strong>攻读硕士学位。目前，我是<strong>哈佛大学</strong>的研究实习生，有幸在 <a href='https://wang.hms.harvard.edu/' target='_blank' rel='noopener'>Harvard AI and Robotics Lab</a> 由 <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> 和 <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> 直接指导。此前，我是<strong>北京大学</strong> <a href='https://github.com/PKU-HMI-Lab' target='_blank' rel='noopener'>Human Machine Intelligence (HMI) Lab</a> 的研究实习生，接受<a href='http://cscsx.cn/' target='_blank' rel='noopener'>陈思翔</a>和<a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>仉尚航教授</a>的指导。我本科毕业于电子科技大学（UESTC）和格拉斯哥大学（UofG），获学士双学位。">I am currently pursuing a Master's degree at <strong>New York University (NYU)</strong>. Currently, I am a Research Intern at <strong>Harvard University</strong>. I am honored to be supervised by <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> in the <a href='https://wang.hms.harvard.edu/' target='_blank' rel='noopener'>Harvard AI and Robotics Lab</a>. Previously, I was a Research Intern at the <a href='https://github.com/PKU-HMI-Lab' target='_blank' rel='noopener'>Human Machine Intelligence (HMI) Lab</a> at <strong>Peking University</strong> under the guidance of <a href='http://cscsx.cn/' target='_blank' rel='noopener'>Sixiang Chen</a> and <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a>. I received my dual Bachelor's degrees from the University of Electronic Science and Technology of China (UESTC) and the University of Glasgow (UofG).</p>
+        <p data-en="In industry, I have interned at the Beijing Innovation Center of Humanoid Robotics (X-Humanoid) and Tencent. I am also curious about finance, and have interned at Yuntai Capital in Beijing and Cherami Investment Group in Guangzhou." data-zh="在工业界，我曾在北京人形机器人创新中心和腾讯实习。同时，我对金融领域也很好奇，曾在北京允泰资本和广州谢诺投资实习。">In industry, I have interned at the Beijing Innovation Center of Humanoid Robotics (X-Humanoid) and Tencent. I am also curious about finance, and have interned at Yuntai Capital in Beijing and Cherami Investment Group in Guangzhou.</p>
+        <p data-en="My research interests include Agentic AI, Embodied AI, World Models, 3D Vision, and FinTech." data-zh="我的研究兴趣包括 Agentic AI、Embodied AI、World Model、3D Vision 和 FinTech。">My research interests include Agentic AI, Embodied AI, World Models, 3D Vision, and FinTech.</p>
+      </div>
+    </main>
+  </section>
+
+  <section class="block" id="publications">
+    <h2 data-en="Publications" data-zh="论文">Publications</h2>
+    <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
+  </section>
+
+  <section class="block" id="news">
+    <h2 data-en="News" data-zh="动态">News</h2>
+    <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
+  </section>
+
+  <section class="block" id="life">
+    <h2 data-en="Life" data-zh="生活">Life</h2>
+    <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
+  </section>
+</div>
+
+<dialog class="dlg" id="mail-dlg" aria-labelledby="mail-dlg-t">
+  <button class="dlg-x" data-close aria-label="Close">×</button>
+  <h3 id="mail-dlg-t" data-en="Email me" data-zh="给我发邮件">Email me</h3>
+  <div class="mail-row"><span class="mail-k">NYU</span><a data-mail="jw10014|nyu.edu"></a><button class="copy-btn" data-mail="jw10014|nyu.edu" data-en="Copy" data-zh="复制">Copy</button></div>
+  <div class="mail-row"><span class="mail-k" data-en="Personal" data-zh="个人">Personal</span><a data-mail="Ricardo520nono|outlook.com"></a><button class="copy-btn" data-mail="Ricardo520nono|outlook.com" data-en="Copy" data-zh="复制">Copy</button></div>
+</dialog>
+<dialog class="dlg dlg-qr" id="wechat-dlg" aria-labelledby="wechat-dlg-t">
+  <button class="dlg-x" data-close aria-label="Close">×</button>
+  <h3 id="wechat-dlg-t" data-en="Add me on WeChat" data-zh="加我微信">Add me on WeChat</h3>
+  <img src="assets/wechat-qr.jpg" alt="WeChat QR code" width="888" height="1131" loading="lazy">
+</dialog>
+
+<script>
+  const root = document.documentElement;
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+  $('#theme').onclick = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+  };
+
+  $$('.seg button').forEach(b => b.onclick = () => {
+    $$('.seg button').forEach(x => x.classList.toggle('on', x === b));
+    const lang = b.dataset.lang;
+    root.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    $$('[data-en]').forEach(el => { el.innerHTML = el.dataset[lang] || el.dataset.en; });
+  });
+
+  $$('[data-open]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); $('#' + b.dataset.open).showModal(); }));
+  $$('.dlg').forEach(d => d.addEventListener('click', e => { if (e.target === d || e.target.closest('[data-close]')) d.close(); }));
+  const addr = el => el.dataset.mail.replace('|', '@');
+  $$('a[data-mail]').forEach(a => { a.href = 'mailto:' + addr(a); a.textContent = addr(a); });
+  $$('.copy-btn').forEach(b => b.addEventListener('click', () => {
+    navigator.clipboard?.writeText(addr(b)).catch(() => {});
+    if (!b._label) b._label = b.textContent;
+    b.textContent = document.documentElement.lang.startsWith('zh') ? '已复制 ✓' : 'Copied ✓'; b.classList.add('done');
+    clearTimeout(b._h); b._h = setTimeout(() => { b.textContent = b._label; b._label = null; b.classList.remove('done'); }, 1400);
+  }));
+
+  // header + scroll spy
+  const navLinks = $$('.links-nav a'), bar = $('#topbar');
+  const mark = l => navLinks.forEach(a => a.classList.toggle('active', a === l));
+  let locked = 0;
+  navLinks.forEach(l => l.addEventListener('click', () => { locked = Date.now() + 1000; mark(l); }));
+  const onScroll = () => {
+    bar.classList.toggle('scrolled', scrollY > 8);
+    if (Date.now() > locked && innerHeight + scrollY >= document.documentElement.scrollHeight - 2) mark(navLinks.at(-1));
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && Date.now() > locked && innerHeight + scrollY < document.documentElement.scrollHeight - 2) mark(navLinks.find(a => a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['about', 'publications', 'news', 'life'].forEach(id => spy.observe(document.getElementById(id)));
+
+  // reveal (content stays visible without JS, or if the tab starts hidden)
+  if (!document.hidden) root.classList.add('js');
+  setTimeout(() => $$('.rv').forEach(el => el.classList.add('in')), 2500);
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  $$('.rv').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+</script>
 </body>
 </html>
