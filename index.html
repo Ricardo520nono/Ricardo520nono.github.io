@@ -85,6 +85,25 @@
   .tbu { margin: 0; color: var(--ink-3); font-size: 17.5px; }
   #top { padding-bottom: 72px; }
 
+  /* ---------- news ---------- */
+  #news h2 { margin-bottom: 18px; }
+  .news-box { max-height: 348px; overflow-y: auto; margin: 0; padding: 6px 24px; list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+  @media (min-width: 641px) { .news-box { margin-left: -18px; padding-left: 17px; } }
+  .news-box:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .news-item { display: grid; grid-template-columns: 62px 92px minmax(0,1fr) 104px; column-gap: 8px; padding: 13px 0; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+  .tag { justify-self: start; align-self: start; margin-top: 2px; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font: 600 12px/15px Inter, "PingFang SC", sans-serif; white-space: nowrap; }
+  .news-item + .news-item { border-top: 1px solid var(--line); }
+  .news-item time { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+  .news-item p { margin: 0; text-wrap: pretty; grid-column: 3; }
+  .news-item a { color: var(--ink); font-weight: 600; transition: color .2s; }
+  .news-item a:hover { color: var(--accent); }
+  .news-item strong { color: var(--ink); font-weight: 600; }
+  .news-links { grid-column: 4; display: flex; gap: 6px; padding-left: 20px; }
+  .news-links a { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); background: var(--card-2); color: var(--ink-2); transition: all .15s; }
+  .news-links a:hover { color: var(--accent); border-color: var(--accent); }
+  .news-links svg { width: 13px; height: 13px; }
+  .news-empty { padding: 13px 0; font-size: 15.5px; color: var(--ink-3); }
+
   /* ---------- hero ---------- */
   .hero { display: grid; grid-template-columns: 340px 1fr; gap: 48px; padding: 28px 0 8px; align-items: start; }
   .left { position: sticky; top: 92px; }
@@ -157,6 +176,10 @@
     .left { position: static; }
   }
   @media (max-width: 640px) {
+    .news-box { padding: 4px 16px; }
+    .news-item { grid-template-columns: auto auto minmax(0,1fr); column-gap: 10px; font-size: 15px; }
+    .news-item p { grid-column: 1 / -1; grid-row: 2; margin-top: 6px; }
+    .news-links { grid-column: 3; grid-row: 1; justify-self: end; padding-left: 0; }
     .seek { margin: 0 -16px 18px; border-radius: 0; border-width: 1px 0; }
     .seek-row { padding: 16px; }
     .wrap { padding: 0 16px; }
@@ -171,8 +194,8 @@
       <a class="logo" href="#top">Jixian<b>.</b>Wu</a>
       <nav class="links-nav" aria-label="Sections">
         <a class="active" href="#about" data-en="About" data-zh="关于">About</a>
-        <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
         <a href="#news" data-en="News" data-zh="动态">News</a>
+        <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
         <a href="#life" data-en="Life" data-zh="生活">Life</a>
       </nav>
       <div class="nav">
@@ -227,13 +250,30 @@
     </main>
   </section>
 
-  <section class="block" id="publications">
-    <h2 data-en="Publications" data-zh="论文">Publications</h2>
-    <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
+  <section class="block" id="news">
+    <h2 id="news-t" data-en="News &amp; Milestones" data-zh="动态与里程碑">News &amp; Milestones</h2>
+    <!-- newest first: <li class="news-item"><time datetime="YYYY-MM">YYYY.MM</time><span class="tag" data-en="Internship" data-zh="实习">Internship</span><p data-en="..." data-zh="...">...</p></li> -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-org" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 2h14a1 1 0 0 1 1 1v19h-6v-5h-4v5H4V3a1 1 0 0 1 1-1Zm3 4v3h3V6H8Zm5 0v3h3V6h-3Zm-5 5v3h3v-3H8Zm5 0v3h3v-3h-3Z"/></symbol>
+      <symbol id="i-paper" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm2 10v2h8v-2H8Zm0 4v2h8v-2H8Z"/></symbol>
+      <symbol id="i-web" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19Zm-9.5 9.5h19M12 2.5c2.6 2.6 4 6 4 9.5s-1.4 6.900-4 9.500c-2.600-2.600-4-6-4-9.500s1.400-6.900 4-9.500Z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    </svg>
+    <ul class="news-box" tabindex="0" aria-labelledby="news-t">
+      <li class="news-item"><time datetime="2026-10">2026.10</time><span class="tag" data-en="Publication" data-zh="论文">Publication</span><p data-en="<strong>ReMAP</strong> released on arXiv." data-zh="<strong>ReMAP</strong> 已发布到 arXiv。"><strong>ReMAP</strong> released on arXiv.</p><span class="news-links"><a href="https://arxiv.org/pdf/2610.05097" target="_blank" rel="noopener" title="Paper" aria-label="ReMAP paper"><svg aria-hidden="true"><use href="#i-paper"/></svg></a></span></li>
+      <li class="news-item"><time datetime="2026-09">2026.09</time><span class="tag" data-en="Publication" data-zh="论文">Publication</span><p data-en="<strong>SafeDojo</strong> accepted to CoRL 2026." data-zh="<strong>SafeDojo</strong> 被 CoRL 2026 接收。"><strong>SafeDojo</strong> accepted to CoRL 2026.</p><span class="news-links"><a href="https://arxiv.org/pdf/2606.20698" target="_blank" rel="noopener" title="Paper" aria-label="SafeDojo paper"><svg aria-hidden="true"><use href="#i-paper"/></svg></a></span></li>
+      <li class="news-item"><time datetime="2026-09">2026.09</time><span class="tag" data-en="Education" data-zh="教育">Education</span><p data-en="Started my Master's program at New York University (NYU). Welcome to New York!" data-zh="开始在纽约大学（NYU）攻读硕士。Welcome to New York！">Started my Master's program at New York University (NYU). Welcome to New York!</p></li>
+      <li class="news-item"><time datetime="2026-08">2026.08</time><span class="tag" data-en="Research" data-zh="研究">Research</span><p data-en="Joined the Harvard AI and Robotics Lab. Many thanks to <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> for this invaluable opportunity!" data-zh="加入 Harvard AI and Robotics Lab。非常感谢 <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> 和 <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> 提供这次宝贵的机会！">Joined the Harvard AI and Robotics Lab. Many thanks to <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> for this invaluable opportunity!</p><span class="news-links"><a href="https://wang.hms.harvard.edu/" target="_blank" rel="noopener" title="Organization" aria-label="Harvard AI and Robotics Lab website"><svg aria-hidden="true"><use href="#i-org"/></svg></a></span></li>
+      <li class="news-item"><time datetime="2026-08">2026.08</time><span class="tag" data-en="Publication" data-zh="论文">Publication</span><p data-en="<strong>WorldEcho</strong> released on arXiv." data-zh="<strong>WorldEcho</strong> 已发布到 arXiv。"><strong>WorldEcho</strong> released on arXiv.</p><span class="news-links"><a href="https://arxiv.org/pdf/2608.24885" target="_blank" rel="noopener" title="Paper" aria-label="WorldEcho paper"><svg aria-hidden="true"><use href="#i-paper"/></svg></a><a href="https://pku-hmi-lab.github.io/WorldEcho/" target="_blank" rel="noopener" title="Project page" aria-label="WorldEcho project page"><svg aria-hidden="true"><use href="#i-web"/></svg></a><a href="https://github.com/PKU-HMI-Lab/WorldEcho" target="_blank" rel="noopener" title="Code" aria-label="WorldEcho code"><svg aria-hidden="true"><use href="#i-code"/></svg></a></span></li>
+      <li class="news-item"><time datetime="2026-07">2026.07</time><span class="tag" data-en="Education" data-zh="教育">Education</span><p data-en="Graduated with dual Bachelor's degrees from UESTC and the University of Glasgow. Delighted that my thesis was recognized as a university-level Outstanding Thesis (Top 1%)!" data-zh="本科毕业于电子科技大学和格拉斯哥大学，获学士双学位。很高兴我的毕业论文被评为校级优秀论文（Top 1%）！">Graduated with dual Bachelor's degrees from UESTC and the University of Glasgow. Delighted that my thesis was recognized as a university-level Outstanding Thesis (Top 1%)!</p></li>
+      <li class="news-item"><time datetime="2026-07">2026.07</time><span class="tag" data-en="Internship" data-zh="实习">Internship</span><p data-en="Joined the Joint Lab at the Beijing Innovation Center of Humanoid Robotics (X-Humanoid) as an Embodied AI Large Model Algorithm Intern." data-zh="加入北京人形机器人创新中心联合实验室，担任具身大模型算法实习生。">Joined the Joint Lab at the Beijing Innovation Center of Humanoid Robotics (X-Humanoid) as an Embodied AI Large Model Algorithm Intern.</p><span class="news-links"><a href="https://www.x-humanoid.com/" target="_blank" rel="noopener" title="Organization" aria-label="X-Humanoid website"><svg aria-hidden="true"><use href="#i-org"/></svg></a></span></li>
+      <li class="news-item"><time datetime="2026-02">2026.02</time><span class="tag" data-en="Research" data-zh="研究">Research</span><p data-en="Joined the HMI Lab at Peking University. Many thanks to <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a> for this invaluable opportunity!" data-zh="加入北京大学 HMI Lab。非常感谢<a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>仉尚航教授</a>提供这次宝贵的机会！">Joined the HMI Lab at Peking University. Many thanks to <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a> for this invaluable opportunity!</p><span class="news-links"><a href="https://github.com/PKU-HMI-Lab" target="_blank" rel="noopener" title="Organization" aria-label="HMI Lab on GitHub"><svg aria-hidden="true"><use href="#i-org"/></svg></a></span></li>
+      <li class="news-item"><time datetime="2025-07">2025.07</time><span class="tag" data-en="Internship" data-zh="实习">Internship</span><p data-en="Joined Tencent as a Cloud Architecture Intern." data-zh="加入腾讯，担任云架构实习生。">Joined Tencent as a Cloud Architecture Intern.</p><span class="news-links"><a href="https://www.tencent.com/" target="_blank" rel="noopener" title="Organization" aria-label="Tencent website"><svg aria-hidden="true"><use href="#i-org"/></svg></a></span></li>
+    </ul>
   </section>
 
-  <section class="block" id="news">
-    <h2 data-en="News" data-zh="动态">News</h2>
+  <section class="block" id="publications">
+    <h2 data-en="Publications" data-zh="论文">Publications</h2>
     <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
   </section>
 
@@ -295,7 +335,7 @@
   const spy = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting && Date.now() > locked && innerHeight + scrollY < document.documentElement.scrollHeight - 2) mark(navLinks.find(a => a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'publications', 'news', 'life'].forEach(id => spy.observe(document.getElementById(id)));
+  ['about', 'news', 'publications', 'life'].forEach(id => spy.observe(document.getElementById(id)));
 
   // reveal (content stays visible without JS, or if the tab starts hidden)
   if (!document.hidden) root.classList.add('js');
