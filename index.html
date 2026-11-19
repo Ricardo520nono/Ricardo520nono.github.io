@@ -126,6 +126,25 @@
   .pub-links a:hover { color: var(--accent); border-color: var(--accent); }
   .pub-links svg { width: 13px; height: 13px; }
 
+  /* ---------- education ---------- */
+  #education h2 { margin-bottom: 18px; }
+  .edu-list { margin: 0; padding: 4px 24px; list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+  @media (min-width: 641px) { .edu-list { margin-left: -18px; padding-left: 17px; } }
+  .edu { display: grid; grid-template-columns: 200px minmax(0,1fr) auto; column-gap: 28px; align-items: center; padding: 20px 0; }
+  .edu + .edu { border-top: 1px solid var(--line); }
+  .edu-logo { display: flex; align-items: center; height: 64px; }
+  .edu-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; }
+  .edu-name { margin: 0 0 3px; font: 600 17px/1.4 Inter, "PingFang SC", sans-serif; letter-spacing: -.1px; color: var(--ink); }
+  .edu-role { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+  .edu-role strong { color: var(--ink); font-weight: 600; }
+  .edu-note { margin: 2px 0 0; font-size: 14px; line-height: 1.6; color: var(--ink-3); }
+  .edu-note a { color: var(--ink-2); font-weight: 600; transition: color .2s; }
+  .edu-note a:hover { color: var(--accent); }
+  .edu-when { text-align: right; font-size: 14px; line-height: 1.7; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .edu-when span { display: block; color: var(--ink-3); }
+  :root[data-theme="dark"] .edu-logo { padding: 8px 12px; border-radius: 12px; background: #fff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .edu-logo { padding: 8px 12px; border-radius: 12px; background: #fff; } }
+
   /* ---------- hero ---------- */
   .hero { display: grid; grid-template-columns: 340px 1fr; gap: 48px; padding: 28px 0 8px; align-items: start; }
   .left { position: sticky; top: 92px; }
@@ -203,6 +222,12 @@
   }
   @media (max-width: 640px) {
     .news-box { padding: 4px 16px; }
+    .edu-list { padding: 2px 16px; }
+    .edu { grid-template-columns: 1fr; row-gap: 12px; padding: 18px 0; }
+    .edu-logo { height: 44px; justify-self: start; }
+    .edu-when { text-align: left; white-space: normal; }
+    .edu-when span { display: inline; }
+    .edu-when span::before { content: " · "; }
     .pub { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
     .dlg-cert { padding: 20px 14px 14px; }
     .news-item { grid-template-columns: auto auto minmax(0,1fr); column-gap: 10px; font-size: 15px; }
@@ -224,6 +249,7 @@
         <a class="active" href="#about" data-en="About" data-zh="关于">About</a>
         <a href="#news" data-en="News" data-zh="动态">News</a>
         <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
+        <a href="#education" data-en="Education" data-zh="教育">Education</a>
         <a href="#life" data-en="Life" data-zh="生活">Life</a>
         <a href="#blog" data-en="Blog" data-zh="博客">Blog</a>
       </nav>
@@ -355,6 +381,55 @@
     </ul>
   </section>
 
+  <section class="block" id="education">
+    <h2 data-en="Education" data-zh="教育经历">Education</h2>
+    <ul class="edu-list">
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/edu/nyu.png" alt="New York University logo" width="480" height="83" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="New York University (NYU)" data-zh="纽约大学（NYU）">New York University (NYU)</h3>
+          <p class="edu-role" data-en="<strong>Master's Student</strong>" data-zh="<strong>硕士研究生</strong>"><strong>Master's Student</strong></p>
+        </div>
+        <div class="edu-when"><time data-en="2026.09 – Present" data-zh="2026.09 – 至今">2026.09 – Present</time><span data-en="New York" data-zh="纽约">New York</span></div>
+      </li>
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/edu/harvard.png" alt="Harvard University logo" width="480" height="121" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="Harvard University" data-zh="哈佛大学">Harvard University</h3>
+          <p class="edu-role" data-en="<strong>Visiting Student</strong>, Harvard AI and Robotics Lab" data-zh="<strong>访问学生</strong>，Harvard AI and Robotics Lab"><strong>Visiting Student</strong>, Harvard AI and Robotics Lab</p>
+          <p class="edu-note" data-en="Supervised by <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a>" data-zh="导师：<a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a>、<a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a>">Supervised by <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a></p>
+        </div>
+        <div class="edu-when"><time data-en="2026.08 – Present" data-zh="2026.08 – 至今">2026.08 – Present</time><span data-en="Boston" data-zh="波士顿">Boston</span></div>
+      </li>
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/edu/pku.png" alt="Peking University logo" width="480" height="135" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="Peking University" data-zh="北京大学">Peking University</h3>
+          <p class="edu-role" data-en="<strong>Visiting Student</strong>, Human Machine Intelligence (HMI) Lab" data-zh="<strong>访问学生</strong>，Human Machine Intelligence (HMI) Lab"><strong>Visiting Student</strong>, Human Machine Intelligence (HMI) Lab</p>
+          <p class="edu-note" data-en="Advised by <a href='http://cscsx.cn/' target='_blank' rel='noopener'>Sixiang Chen</a> and <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a>" data-zh="指导：<a href='http://cscsx.cn/' target='_blank' rel='noopener'>陈思翔</a>、<a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>仉尚航教授</a>">Advised by <a href='http://cscsx.cn/' target='_blank' rel='noopener'>Sixiang Chen</a> and <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a></p>
+        </div>
+        <div class="edu-when"><time data-en="2026.02 – 2026.08" data-zh="2026.02 – 2026.08">2026.02 – 2026.08</time><span data-en="Beijing" data-zh="北京">Beijing</span></div>
+      </li>
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/edu/uestc.png" alt="University of Electronic Science and Technology of China logo" width="340" height="77" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="University of Electronic Science and Technology of China (UESTC)" data-zh="电子科技大学（UESTC）">University of Electronic Science and Technology of China (UESTC)</h3>
+          <p class="edu-role" data-en="<strong>Bachelor's Degree</strong>, dual degree with the University of Glasgow" data-zh="<strong>学士学位</strong>，与格拉斯哥大学双学位"><strong>Bachelor's Degree</strong>, dual degree with the University of Glasgow</p>
+          <p class="edu-note" data-en="Outstanding Undergraduate Thesis (Top 1%)" data-zh="校级优秀本科毕业论文（Top 1%）">Outstanding Undergraduate Thesis (Top 1%)</p>
+        </div>
+        <div class="edu-when"><time data-en="2022.09 – 2026.06" data-zh="2022.09 – 2026.06">2022.09 – 2026.06</time><span data-en="Chengdu" data-zh="成都">Chengdu</span></div>
+      </li>
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/edu/glasgow.png" alt="University of Glasgow logo" width="480" height="150" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="University of Glasgow (UofG)" data-zh="格拉斯哥大学（UofG）">University of Glasgow (UofG)</h3>
+          <p class="edu-role" data-en="<strong>Bachelor's Degree</strong>, dual degree with UESTC" data-zh="<strong>学士学位</strong>，与电子科技大学双学位"><strong>Bachelor's Degree</strong>, dual degree with UESTC</p>
+        </div>
+        <div class="edu-when"><time data-en="2022.09 – 2026.06" data-zh="2022.09 – 2026.06">2022.09 – 2026.06</time><span data-en="Glasgow" data-zh="格拉斯哥">Glasgow</span></div>
+      </li>
+    </ul>
+  </section>
+
   <section class="block" id="life">
     <h2 data-en="Life" data-zh="生活">Life</h2>
     <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
@@ -443,7 +518,7 @@
   const spy = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting && Date.now() > locked && innerHeight + scrollY < document.documentElement.scrollHeight - 2) mark(navLinks.find(a => a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'news', 'publications', 'life', 'blog'].forEach(id => spy.observe(document.getElementById(id)));
+  ['about', 'news', 'publications', 'education', 'life', 'blog'].forEach(id => spy.observe(document.getElementById(id)));
 
   // reveal (content stays visible without JS, or if the tab starts hidden)
   if (!document.hidden) root.classList.add('js');
