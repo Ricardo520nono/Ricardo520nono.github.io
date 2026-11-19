@@ -225,6 +225,7 @@
         <a href="#news" data-en="News" data-zh="动态">News</a>
         <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
         <a href="#life" data-en="Life" data-zh="生活">Life</a>
+        <a href="#blog" data-en="Blog" data-zh="博客">Blog</a>
       </nav>
       <div class="nav">
         <div class="seg" role="group" aria-label="Language"><button class="on" data-lang="en">EN</button><button data-lang="zh">中</button></div>
@@ -358,6 +359,11 @@
     <h2 data-en="Life" data-zh="生活">Life</h2>
     <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
   </section>
+
+  <section class="block" id="blog">
+    <h2 data-en="Blog" data-zh="博客">Blog</h2>
+    <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
+  </section>
 </div>
 
 <dialog class="dlg" id="mail-dlg" aria-labelledby="mail-dlg-t">
@@ -437,7 +443,7 @@
   const spy = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting && Date.now() > locked && innerHeight + scrollY < document.documentElement.scrollHeight - 2) mark(navLinks.find(a => a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'news', 'publications', 'life'].forEach(id => spy.observe(document.getElementById(id)));
+  ['about', 'news', 'publications', 'life', 'blog'].forEach(id => spy.observe(document.getElementById(id)));
 
   // reveal (content stays visible without JS, or if the tab starts hidden)
   if (!document.hidden) root.classList.add('js');
