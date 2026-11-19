@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://jixianwu.com/">
 <meta property="og:image" content="https://jixianwu.com/assets/avatar.jpg">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://jixianwu.com/#website","url":"https://jixianwu.com/","name":"Jixian Wu","alternateName":["Jixian (Ricardo) Wu","吴极限"]},{"@type":"ProfilePage","@id":"https://jixianwu.com/#profile","url":"https://jixianwu.com/","name":"Jixian Wu (Ricardo) 吴极限 | NYU, Harvard AI and Robotics Lab","dateModified":"2026-11-04","isPartOf":{"@id":"https://jixianwu.com/#website"},"mainEntity":{"@id":"https://jixianwu.com/#person"}},{"@type":"Person","name":"Jixian Wu","alternateName":["Ricardo Wu","Jixian (Ricardo) Wu","Jixian Ricardo Wu","Wu Jixian","吴极限"],"url":"https://jixianwu.com/","image":"https://jixianwu.com/assets/avatar.jpg","jobTitle":"Research Intern","affiliation":[{"@type":"CollegeOrUniversity","name":"New York University"},{"@type":"CollegeOrUniversity","name":"Harvard University"}],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Electronic Science and Technology of China"},{"@type":"CollegeOrUniversity","name":"University of Glasgow"}],"knowsAbout":["Agentic AI","Embodied AI","World Models","3D Vision","FinTech"],"sameAs":["https://github.com/Ricardo520nono","https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ","https://www.linkedin.com/in/jixian-wu-6bb066360/"],"@id":"https://jixianwu.com/#person","givenName":"Jixian","familyName":"Wu","description":"Jixian Wu (Ricardo Wu, 吴极限) is a Master's student at New York University and a Research Intern at the Harvard AI and Robotics Lab, working on Agentic AI, Embodied AI, World Models, and 3D Vision. Seeking a CS Ph.D. for Fall 2028."},{"@type":"ScholarlyArticle","name":"ReMAP: Restoring the Perceptual Cycle with Reasoning-Time Latent Visual Memory","url":"https://arxiv.org/abs/2610.05097","author":{"@id":"https://jixianwu.com/#person"}},{"@type":"ScholarlyArticle","name":"Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning","url":"https://arxiv.org/abs/2608.24885","author":{"@id":"https://jixianwu.com/#person"}},{"@type":"ScholarlyArticle","name":"SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model","url":"https://arxiv.org/abs/2606.20698","author":{"@id":"https://jixianwu.com/#person"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://jixianwu.com/#website","url":"https://jixianwu.com/","name":"Jixian Wu","alternateName":["Jixian (Ricardo) Wu","吴极限"]},{"@type":"ProfilePage","@id":"https://jixianwu.com/#profile","url":"https://jixianwu.com/","name":"Jixian Wu (Ricardo) 吴极限 | NYU, Harvard AI and Robotics Lab","dateModified":"2026-11-18","isPartOf":{"@id":"https://jixianwu.com/#website"},"mainEntity":{"@id":"https://jixianwu.com/#person"}},{"@type":"Person","name":"Jixian Wu","alternateName":["Ricardo Wu","Jixian (Ricardo) Wu","Jixian Ricardo Wu","Wu Jixian","吴极限"],"url":"https://jixianwu.com/","image":"https://jixianwu.com/assets/avatar.jpg","jobTitle":"Research Intern","affiliation":[{"@type":"CollegeOrUniversity","name":"New York University"},{"@type":"CollegeOrUniversity","name":"Harvard University"}],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Electronic Science and Technology of China"},{"@type":"CollegeOrUniversity","name":"University of Glasgow"}],"knowsAbout":["Agentic AI","Embodied AI","World Models","3D Vision","FinTech"],"sameAs":["https://github.com/Ricardo520nono","https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ","https://www.linkedin.com/in/jixian-wu-6bb066360/"],"@id":"https://jixianwu.com/#person","givenName":"Jixian","familyName":"Wu","description":"Jixian Wu (Ricardo Wu, 吴极限) is a Master's student at New York University and a Research Intern at the Harvard AI and Robotics Lab, working on Agentic AI, Embodied AI, World Models, and 3D Vision. Seeking a CS Ph.D. for Fall 2028."},{"@type":"ScholarlyArticle","name":"ReMAP: Restoring the Perceptual Cycle with Reasoning-Time Latent Visual Memory","url":"https://arxiv.org/abs/2610.05097","author":{"@id":"https://jixianwu.com/#person"}},{"@type":"ScholarlyArticle","name":"Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning","url":"https://arxiv.org/abs/2608.24885","author":{"@id":"https://jixianwu.com/#person"}},{"@type":"ScholarlyArticle","name":"SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model","url":"https://arxiv.org/abs/2606.20698","author":{"@id":"https://jixianwu.com/#person"}}]}</script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -107,6 +107,25 @@
   .news-links svg { width: 13px; height: 13px; }
   .news-empty { padding: 13px 0; font-size: 15.5px; color: var(--ink-3); }
 
+  /* ---------- publications ---------- */
+  #publications h2 { margin-bottom: 18px; }
+  .pub-list { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+  .pub { display: grid; grid-template-columns: 340px minmax(0,1fr); gap: 24px; align-items: center; padding: 18px 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+  @media (min-width: 641px) { .pub { margin-left: -18px; padding-left: 17px; } }
+  .pub-media { display: block; width: 100%; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; cursor: zoom-in; transition: border-color .15s; }
+  .pub-media:hover { border-color: var(--accent); }
+  .pub-media img { display: block; width: 100%; height: auto; }
+  .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-bottom: 8px; }
+  .pub-meta .tag { margin-top: 0; }
+  .pub-venue { font-size: 13.5px; font-weight: 600; color: var(--ink-2); }
+  .pub-title { margin: 0 0 6px; font: 600 17px/1.45 Inter, "PingFang SC", sans-serif; letter-spacing: -.1px; color: var(--ink); text-wrap: pretty; }
+  .pub-authors { margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: var(--ink-2); text-wrap: pretty; }
+  .pub-authors strong { color: var(--ink); font-weight: 700; }
+  .pub-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pub-links a { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card-2); color: var(--ink-2); font-size: 12.5px; font-weight: 600; transition: all .15s; }
+  .pub-links a:hover { color: var(--accent); border-color: var(--accent); }
+  .pub-links svg { width: 13px; height: 13px; }
+
   /* ---------- hero ---------- */
   .hero { display: grid; grid-template-columns: 340px 1fr; gap: 48px; padding: 28px 0 8px; align-items: start; }
   .left { position: sticky; top: 92px; }
@@ -168,6 +187,7 @@
   .copy-btn:hover, .copy-btn.done { background: var(--accent); color: #fff; }
   .dlg-qr { width: min(320px, calc(100vw - 32px)); text-align: center; }
   .dlg-cert { width: min(760px, calc(100vw - 32px)); }
+  .dlg-fig { width: min(1100px, calc(100vw - 32px)); }
   .dlg-cert h3 { padding-right: 28px; }
   .dlg-cert img { width: 100%; height: auto; border-radius: 8px; display: block; }
   .dlg-qr img { width: 100%; height: auto; border-radius: 12px; display: block; }
@@ -183,6 +203,7 @@
   }
   @media (max-width: 640px) {
     .news-box { padding: 4px 16px; }
+    .pub { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
     .dlg-cert { padding: 20px 14px 14px; }
     .news-item { grid-template-columns: auto auto minmax(0,1fr); column-gap: 10px; font-size: 15px; }
     .news-item p { grid-column: 1 / -1; grid-row: 2; margin-top: 6px; }
@@ -272,7 +293,7 @@
       <li class="news-item"><time datetime="2026-09">2026.09</time><span class="tag" data-en="Publication" data-zh="论文">Publication</span><p data-en="<strong>SafeDojo</strong> accepted to CoRL 2026." data-zh="<strong>SafeDojo</strong> 被 CoRL 2026 接收。"><strong>SafeDojo</strong> accepted to CoRL 2026.</p><span class="news-links"><a href="https://arxiv.org/pdf/2606.20698" target="_blank" rel="noopener" title="Paper" aria-label="SafeDojo paper"><svg aria-hidden="true"><use href="#i-paper"/></svg></a></span></li>
       <li class="news-item"><time datetime="2026-09">2026.09</time><span class="tag" data-en="Education" data-zh="教育">Education</span><p data-en="Started my Master's program at New York University (NYU). Welcome to New York!" data-zh="开始在纽约大学（NYU）攻读硕士。Welcome to New York！">Started my Master's program at New York University (NYU). Welcome to New York!</p></li>
       <li class="news-item"><time datetime="2026-08">2026.08</time><span class="tag" data-en="Research" data-zh="研究">Research</span><p data-en="Joined the Harvard AI and Robotics Lab. Many thanks to <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> for this invaluable opportunity!" data-zh="加入 Harvard AI and Robotics Lab。非常感谢 <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> 和 <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> 提供这次宝贵的机会！">Joined the Harvard AI and Robotics Lab. Many thanks to <a href='https://kaichen-z.github.io/' target='_blank' rel='noopener'>Dr. Kaichen Zhou</a> and <a href='https://wang.hms.harvard.edu/team/dr-wang/' target='_blank' rel='noopener'>Prof. Mengyu Wang</a> for this invaluable opportunity!</p><span class="news-links"><a href="https://wang.hms.harvard.edu/" target="_blank" rel="noopener" title="Organization" aria-label="Harvard AI and Robotics Lab website"><svg aria-hidden="true"><use href="#i-org"/></svg></a></span></li>
-      <li class="news-item"><time datetime="2026-08">2026.08</time><span class="tag" data-en="Publication" data-zh="论文">Publication</span><p data-en="<strong>WorldEcho</strong> released on arXiv." data-zh="<strong>WorldEcho</strong> 已发布到 arXiv。"><strong>WorldEcho</strong> released on arXiv.</p><span class="news-links"><a href="https://arxiv.org/pdf/2608.24885" target="_blank" rel="noopener" title="Paper" aria-label="WorldEcho paper"><svg aria-hidden="true"><use href="#i-paper"/></svg></a><a href="https://pku-hmi-lab.github.io/WorldEcho/" target="_blank" rel="noopener" title="Project page" aria-label="WorldEcho project page"><svg aria-hidden="true"><use href="#i-web"/></svg></a><a href="https://github.com/PKU-HMI-Lab/WorldEcho" target="_blank" rel="noopener" title="Code" aria-label="WorldEcho code"><svg aria-hidden="true"><use href="#i-code"/></svg></a></span></li>
+      <li class="news-item"><time datetime="2026-08">2026.08</time><span class="tag" data-en="Publication" data-zh="论文">Publication</span><p data-en="<strong>WorldEcho</strong> released on arXiv." data-zh="<strong>WorldEcho</strong> 已发布到 arXiv。"><strong>WorldEcho</strong> released on arXiv.</p><span class="news-links"><a href="https://arxiv.org/pdf/2608.24885" target="_blank" rel="noopener" title="Paper" aria-label="WorldEcho paper"><svg aria-hidden="true"><use href="#i-paper"/></svg></a><a href="https://worldecho-worldsync.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="WorldEcho project page"><svg aria-hidden="true"><use href="#i-web"/></svg></a><a href="https://github.com/PKU-HMI-Lab/WorldEcho" target="_blank" rel="noopener" title="Code" aria-label="WorldEcho code"><svg aria-hidden="true"><use href="#i-code"/></svg></a></span></li>
       <li class="news-item"><time datetime="2026-07">2026.07</time><span class="tag" data-en="Internship" data-zh="实习">Internship</span><p data-en="Joined the Joint Lab at the Beijing Innovation Center of Humanoid Robotics (X-Humanoid) as an Embodied AI Large Model Algorithm Intern." data-zh="加入北京人形机器人创新中心联合实验室，担任具身大模型算法实习生。">Joined the Joint Lab at the Beijing Innovation Center of Humanoid Robotics (X-Humanoid) as an Embodied AI Large Model Algorithm Intern.</p><span class="news-links"><a href="https://www.x-humanoid.com/" target="_blank" rel="noopener" title="Organization" aria-label="X-Humanoid website"><svg aria-hidden="true"><use href="#i-org"/></svg></a></span></li>
       <li class="news-item"><time datetime="2026-06">2026.06</time><span class="tag" data-en="Education" data-zh="教育">Education</span><p data-en="Graduated with dual Bachelor's degrees from UESTC and the University of Glasgow. Delighted that my thesis was recognized as a university-level Outstanding Thesis (Top 1%)!" data-zh="本科毕业于电子科技大学和格拉斯哥大学，获学士双学位。很高兴我的毕业论文被评为校级优秀论文（Top 1%）！">Graduated with dual Bachelor's degrees from UESTC and the University of Glasgow. Delighted that my thesis was recognized as a university-level Outstanding Thesis (Top 1%)!</p><span class="news-links"><button type="button" data-open="thesis-dlg" title="Certificate" aria-label="View thesis award certificate"><svg aria-hidden="true"><use href="#i-award"/></svg></button></span></li>
       <li class="news-item"><time datetime="2026-02">2026.02</time><span class="tag" data-en="Research" data-zh="研究">Research</span><p data-en="Joined the HMI Lab at Peking University. Many thanks to <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a> for this invaluable opportunity!" data-zh="加入北京大学 HMI Lab。非常感谢<a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>仉尚航教授</a>提供这次宝贵的机会！">Joined the HMI Lab at Peking University. Many thanks to <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a> for this invaluable opportunity!</p><span class="news-links"><a href="https://github.com/PKU-HMI-Lab" target="_blank" rel="noopener" title="Organization" aria-label="HMI Lab on GitHub"><svg aria-hidden="true"><use href="#i-org"/></svg></a></span></li>
@@ -282,7 +303,55 @@
 
   <section class="block" id="publications">
     <h2 data-en="Publications" data-zh="论文">Publications</h2>
-    <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
+    <ul class="pub-list">
+      <li class="pub">
+        <button class="pub-media" type="button" data-open="worldecho-dlg" aria-label="Enlarge the WorldEcho teaser figure"><img src="assets/pubs/worldecho-teaser-thumb.jpg" alt="Teaser figure: WorldEcho diagnoses action following in world models, WorldSync improves it, and policy improvement validates it" width="720" height="376" loading="lazy"></button>
+        <div>
+          <div class="pub-meta"><span class="tag" data-en="Core Contributor" data-zh="核心贡献">Core Contributor</span><span class="pub-venue" data-en="Under Review (ICLR 2027: 443)" data-zh="在投（ICLR 2027: 443）">Under Review (ICLR 2027: 443)</span></div>
+          <h3 class="pub-title">Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning</h3>
+          <p class="pub-authors">Sixiang Chen, Jiaming Liu, <strong>Jixian Wu</strong>, Yichen Guo, Tinghao Wang, QR Li, Siyuan Qian, Peterson Co, Hao Chen, Jiajun Cao, Zhoujian Li, Lingfei Zhai, Jian Tang, Shanghang Zhang</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2608.24885" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg><span data-en="Paper" data-zh="论文">Paper</span></a>
+            <a href="https://worldecho-worldsync.github.io/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-web"/></svg><span data-en="Project" data-zh="项目主页">Project</span></a>
+            <a href="https://github.com/PKU-HMI-Lab/WorldEcho" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-code"/></svg><span data-en="Code" data-zh="代码">Code</span></a>
+          </div>
+        </div>
+      </li>
+      <li class="pub">
+        <button class="pub-media" type="button" data-open="remap-dlg" aria-label="Enlarge the ReMAP overview figure"><img src="assets/pubs/remap-overview-thumb.jpg" alt="Overview of ReMAP: global memory formation and local memory formation feeding the token sequence" width="720" height="405" loading="lazy"></button>
+        <div>
+          <div class="pub-meta"><span class="tag" data-en="Collaboration" data-zh="合作">Collaboration</span><span class="pub-venue" data-en="Under Review (ICLR 2027: 333)" data-zh="在投（ICLR 2027: 333）">Under Review (ICLR 2027: 333)</span></div>
+          <h3 class="pub-title">ReMAP: Restoring the Perceptual Cycle with Reasoning-Time Latent Visual Memory</h3>
+          <p class="pub-authors">Hao Jiang, Zhanyu Guo, Chenwei Wu, Yichen Guo, Qizhe Zhang, Junchi Yao, <strong>Jixian Wu</strong>, Jinhao You, Kai Tang, Jiajun Cao, Tinghao Wang, Mengyu Wang, Leo Anthony Celi, Shanghang Zhang</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2610.05097" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg><span data-en="Paper" data-zh="论文">Paper</span></a>
+          </div>
+        </div>
+      </li>
+      <li class="pub">
+        <button class="pub-media" type="button" data-open="safedojo-dlg" aria-label="Enlarge the SafeDojo teaser figure"><img src="assets/pubs/safedojo-teaser-thumb.jpg" alt="SafeDojo overview: a VLA policy rolls out actions, a world model scores reward and cost on imagined futures, and safe GRPO updates the policy" width="720" height="415" loading="lazy"></button>
+        <div>
+          <div class="pub-meta"><span class="tag" data-en="Collaboration" data-zh="合作">Collaboration</span><span class="pub-venue">CoRL 2026</span></div>
+          <h3 class="pub-title">SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model</h3>
+          <p class="pub-authors">Kai Tang, Peidong Jia, Zhong Chu, Jiajun Cao, <strong>Jixian Wu</strong>, Bohua Zhang, Rui Ma, Fangyuan Zhao, Sixiang Chen, Yichen Guo, Xiaowei Chi, Chun-Kai Fan, Kevin Zhang, Jinchang Xu, Fubing Yang, Weishi Mi, Xiaozhu Ju, Jian Tang, Shanghang Zhang</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2606.20698" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg><span data-en="Paper" data-zh="论文">Paper</span></a>
+            <a href="https://kai030113.github.io/safedojo/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-web"/></svg><span data-en="Project" data-zh="项目主页">Project</span></a>
+          </div>
+        </div>
+      </li>
+      <li class="pub">
+        <button class="pub-media" type="button" data-open="robocoach-dlg" aria-label="Enlarge the RoboCoach teaser figure"><img src="assets/pubs/robocoach-teaser-thumb.jpg" alt="RoboCoach core idea: an AI agent drafts, debugs and improves embodied policies, with a roadmap of autonomous embodied AI development" width="720" height="484" loading="lazy"></button>
+        <div>
+          <div class="pub-meta"><span class="tag" data-en="Collaboration" data-zh="合作">Collaboration</span><span class="pub-venue">arXiv 2026</span></div>
+          <h3 class="pub-title">From Digital to Physical: Digital Agents as Autonomous Coaches for Physical Intelligence</h3>
+          <p class="pub-authors">Zixing Lei, Genjia Liu, Yuanshuo Zhang, Qipeng Liu, Yuzhu Cai, Sixiang Chen, <strong>Jixian Wu</strong>, Yunhong Wang, Weixin Li, Chuan Wen, Bo Zhao, Shanghang Zhang, Wenzhao Lian, Siheng Chen</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2601.21570" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg><span data-en="Paper" data-zh="论文">Paper</span></a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <section class="block" id="life">
@@ -301,6 +370,26 @@
   <button class="dlg-x" data-close aria-label="Close">×</button>
   <h3 id="thesis-dlg-t" data-en="Outstanding Undergraduate Thesis" data-zh="优秀本科毕业设计（论文）">Outstanding Undergraduate Thesis</h3>
   <img src="assets/thesis-award.jpg" alt="UESTC Outstanding Undergraduate Thesis certificate, June 2026" width="1400" height="964" loading="lazy">
+</dialog>
+<dialog class="dlg dlg-cert dlg-fig" id="worldecho-dlg" aria-labelledby="worldecho-dlg-t">
+  <button class="dlg-x" data-close aria-label="Close">×</button>
+  <h3 id="worldecho-dlg-t">WorldEcho &amp; WorldSync</h3>
+  <img src="assets/pubs/worldecho-teaser.jpg" alt="Teaser figure of the WorldEcho and WorldSync paper" width="1800" height="940" loading="lazy">
+</dialog>
+<dialog class="dlg dlg-cert dlg-fig" id="remap-dlg" aria-labelledby="remap-dlg-t">
+  <button class="dlg-x" data-close aria-label="Close">×</button>
+  <h3 id="remap-dlg-t">ReMAP</h3>
+  <img src="assets/pubs/remap-overview.jpg" alt="Overview figure of the ReMAP paper" width="1600" height="900" loading="lazy">
+</dialog>
+<dialog class="dlg dlg-cert dlg-fig" id="safedojo-dlg" aria-labelledby="safedojo-dlg-t">
+  <button class="dlg-x" data-close aria-label="Close">×</button>
+  <h3 id="safedojo-dlg-t">SafeDojo</h3>
+  <img src="assets/pubs/safedojo-teaser.jpg" alt="Teaser figure of the SafeDojo paper: method overview and experimental performance" width="1197" height="281" loading="lazy">
+</dialog>
+<dialog class="dlg dlg-cert dlg-fig" id="robocoach-dlg" aria-labelledby="robocoach-dlg-t">
+  <button class="dlg-x" data-close aria-label="Close">×</button>
+  <h3 id="robocoach-dlg-t">RoboCoach</h3>
+  <img src="assets/pubs/robocoach-teaser.jpg" alt="Figure 1 of the RoboCoach paper: core idea and capability roadmap" width="1368" height="920" loading="lazy">
 </dialog>
 <dialog class="dlg dlg-qr" id="wechat-dlg" aria-labelledby="wechat-dlg-t">
   <button class="dlg-x" data-close aria-label="Close">×</button>
