@@ -127,7 +127,7 @@
   .pub-links svg { width: 13px; height: 13px; }
 
   /* ---------- education ---------- */
-  #education h2 { margin-bottom: 18px; }
+  #education h2, #experience h2 { margin-bottom: 18px; }
   .edu-list { margin: 0; padding: 4px 24px; list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
   @media (min-width: 641px) { .edu-list { margin-left: -18px; padding-left: 17px; } }
   .edu { display: grid; grid-template-columns: 200px minmax(0,1fr) auto; column-gap: 28px; align-items: center; padding: 20px 0; }
@@ -250,6 +250,7 @@
         <a href="#news" data-en="News" data-zh="动态">News</a>
         <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
         <a href="#education" data-en="Education" data-zh="教育">Education</a>
+        <a href="#experience" data-en="Experience" data-zh="经历">Experience</a>
         <a href="#life" data-en="Life" data-zh="生活">Life</a>
         <a href="#blog" data-en="Blog" data-zh="博客">Blog</a>
       </nav>
@@ -430,6 +431,39 @@
     </ul>
   </section>
 
+  <section class="block" id="experience">
+    <h2 data-en="Research Experience" data-zh="研究经历">Research Experience</h2>
+    <ul class="edu-list">
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/exp/x-humanoid.png" alt="X-Humanoid logo" width="480" height="161" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="Beijing Innovation Center of Humanoid Robotics (X-Humanoid)" data-zh="北京人形机器人创新中心（X-Humanoid）">Beijing Innovation Center of Humanoid Robotics (X-Humanoid)</h3>
+          <p class="edu-role" data-en="<strong>Research Intern</strong>, Joint Lab" data-zh="<strong>研究实习生</strong>，联合实验室"><strong>Research Intern</strong>, Joint Lab</p>
+          <p class="edu-note" data-en="Embodied AI large-model algorithms" data-zh="具身大模型算法">Embodied AI large-model algorithms</p>
+        </div>
+        <div class="edu-when"><time data-en="2026.07 – 2026.11" data-zh="2026.07 – 2026.11">2026.07 – 2026.11</time><span data-en="Beijing" data-zh="北京">Beijing</span></div>
+      </li>
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/exp/hmi.png" alt="HMI Lab logo" width="253" height="200" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="Peking University" data-zh="北京大学">Peking University</h3>
+          <p class="edu-role" data-en="<strong>Research Intern</strong>, Human Machine Intelligence (HMI) Lab" data-zh="<strong>研究实习生</strong>，Human Machine Intelligence (HMI) Lab"><strong>Research Intern</strong>, Human Machine Intelligence (HMI) Lab</p>
+          <p class="edu-note" data-en="Advised by <a href='http://cscsx.cn/' target='_blank' rel='noopener'>Sixiang Chen</a> and <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a>" data-zh="指导：<a href='http://cscsx.cn/' target='_blank' rel='noopener'>陈思翔</a>、<a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>仉尚航教授</a>">Advised by <a href='http://cscsx.cn/' target='_blank' rel='noopener'>Sixiang Chen</a> and <a href='https://cs.pku.edu.cn/info/1233/2060.htm' target='_blank' rel='noopener'>Prof. Shanghang Zhang</a></p>
+        </div>
+        <div class="edu-when"><time data-en="2026.02 – 2026.11" data-zh="2026.02 – 2026.11">2026.02 – 2026.11</time><span data-en="Beijing" data-zh="北京">Beijing</span></div>
+      </li>
+      <li class="edu">
+        <div class="edu-logo"><img src="assets/exp/tencent.png" alt="Tencent logo" width="480" height="62" loading="lazy"></div>
+        <div>
+          <h3 class="edu-name" data-en="Tencent" data-zh="腾讯">Tencent</h3>
+          <p class="edu-role" data-en="<strong>Cloud Architecture Intern</strong>" data-zh="<strong>云架构实习生</strong>"><strong>Cloud Architecture Intern</strong></p>
+          <p class="edu-note" data-en="Mentor: Yiming Xu" data-zh="Mentor：Yiming Xu">Mentor: Yiming Xu</p>
+        </div>
+        <div class="edu-when"><time data-en="2025.07 – 2025.09" data-zh="2025.07 – 2025.09">2025.07 – 2025.09</time><span data-en="Shenzhen" data-zh="深圳">Shenzhen</span></div>
+      </li>
+    </ul>
+  </section>
+
   <section class="block" id="life">
     <h2 data-en="Life" data-zh="生活">Life</h2>
     <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
@@ -518,7 +552,7 @@
   const spy = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting && Date.now() > locked && innerHeight + scrollY < document.documentElement.scrollHeight - 2) mark(navLinks.find(a => a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'news', 'publications', 'education', 'life', 'blog'].forEach(id => spy.observe(document.getElementById(id)));
+  ['about', 'news', 'publications', 'education', 'experience', 'life', 'blog'].forEach(id => spy.observe(document.getElementById(id)));
 
   // reveal (content stays visible without JS, or if the tab starts hidden)
   if (!document.hidden) root.classList.add('js');
