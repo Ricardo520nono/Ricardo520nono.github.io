@@ -108,7 +108,7 @@
   .news-empty { padding: 13px 0; font-size: 15.5px; color: var(--ink-3); }
 
   /* ---------- publications ---------- */
-  #publications h2 { margin-bottom: 18px; }
+  #publications h2 { margin-bottom: 6px; }
   .pub-list { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
   .pub { display: grid; grid-template-columns: 340px minmax(0,1fr); gap: 24px; align-items: center; padding: 18px 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
   @media (min-width: 641px) { .pub { margin-left: -18px; padding-left: 17px; } }
@@ -148,6 +148,9 @@
   /* ---------- team ---------- */
   #team h2 { margin-bottom: 6px; }
   .team-lead { margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+  .team-lead a { color: var(--accent); font-weight: 600; white-space: nowrap; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  .team-lead a:hover { border-bottom-color: var(--accent); }
+  .team-lead a svg { width: 11px; height: 11px; margin-left: 4px; vertical-align: 0; }
   .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
   @media (min-width: 641px) { .team-grid { margin-left: -18px; } }
   .mate { display: flex; align-items: center; gap: 14px; height: 100%; padding: 16px 18px 16px 17px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); color: inherit; transition: transform .15s, border-color .15s, box-shadow .15s; }
@@ -346,6 +349,7 @@
 
   <section class="block" id="publications">
     <h2 data-en="Publications" data-zh="论文">Publications</h2>
+    <p class="team-lead" data-en="See all my publications on <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>." data-zh="完整论文列表见 <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>。">See all my publications on <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>.</p>
     <ul class="pub-list">
       <li class="pub">
         <button class="pub-media" type="button" data-open="worldecho-dlg" aria-label="Enlarge the WorldEcho teaser figure"><img src="assets/pubs/worldecho-teaser-thumb.jpg" alt="Teaser figure: WorldEcho diagnoses action following in world models, WorldSync improves it, and policy improvement validates it" width="720" height="376" loading="lazy"></button>
