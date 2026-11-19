@@ -145,6 +145,19 @@
   :root[data-theme="dark"] .edu-logo { padding: 8px 12px; border-radius: 12px; background: #fff; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .edu-logo { padding: 8px 12px; border-radius: 12px; background: #fff; } }
 
+  /* ---------- team ---------- */
+  #team h2 { margin-bottom: 6px; }
+  .team-lead { margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+  .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+  @media (min-width: 641px) { .team-grid { margin-left: -18px; } }
+  .mate { display: flex; align-items: center; gap: 14px; height: 100%; padding: 16px 18px 16px 17px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); color: inherit; transition: transform .15s, border-color .15s, box-shadow .15s; }
+  a.mate:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow-up); }
+  .mate-av { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font: 700 15px/1 Inter, sans-serif; letter-spacing: .3px; }
+  .mate-name { display: block; font: 600 16px/1.35 Inter, "PingFang SC", sans-serif; color: var(--ink); }
+  .mate-name svg { width: 11px; height: 11px; margin-left: 5px; color: var(--ink-3); vertical-align: 1px; }
+  a.mate:hover .mate-name svg { color: var(--accent); }
+  .mate-sub { display: block; margin-top: 2px; font-size: 13.5px; line-height: 1.45; color: var(--ink-3); }
+
   /* ---------- hero ---------- */
   .hero { display: grid; grid-template-columns: 340px 1fr; gap: 48px; padding: 28px 0 8px; align-items: start; }
   .left { position: sticky; top: 92px; }
@@ -215,13 +228,14 @@
   .js .rv.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { *, .rv { animation: none !important; transition: none !important; } .rv { opacity: 1; transform: none; } }
 
-  @media (max-width: 1020px) { .links-nav { display: none; } }
+  @media (max-width: 1100px) { .links-nav { display: none; } }
   @media (max-width: 920px) {
     .hero { grid-template-columns: 1fr; gap: 32px; }
     .left { position: static; }
   }
   @media (max-width: 640px) {
     .news-box { padding: 4px 16px; }
+    .team-grid { grid-template-columns: 1fr; gap: 10px; }
     .edu-list { padding: 2px 16px; }
     .edu { grid-template-columns: 1fr; row-gap: 12px; padding: 18px 0; }
     .edu-logo { height: 44px; justify-self: start; }
@@ -251,6 +265,7 @@
         <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
         <a href="#education" data-en="Education" data-zh="教育">Education</a>
         <a href="#experience" data-en="Experience" data-zh="经历">Experience</a>
+        <a href="#team" data-en="Team" data-zh="伙伴">Team</a>
         <a href="#life" data-en="Life" data-zh="生活">Life</a>
         <a href="#blog" data-en="Blog" data-zh="博客">Blog</a>
       </nav>
@@ -455,6 +470,16 @@
     </ul>
   </section>
 
+  <section class="block" id="team">
+    <h2 data-en="Team" data-zh="伙伴">Team</h2>
+    <p class="team-lead" data-en="The friends I build, debug, and chase deadlines with." data-zh="一起做研究、一起赶 deadline 的战友。">The friends I build, debug, and chase deadlines with.</p>
+    <ul class="team-grid">
+      <li><a class="mate" href="https://easonai-5589.github.io/" target="_blank" rel="noopener"><span class="mate-av" aria-hidden="true">YG</span><span><span class="mate-name">Yichen Guo<svg viewBox="0 0 12 12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3.500 8.500 8.500 3.500M4.500 3.500h4v4"/></svg></span><span class="mate-sub" data-en="NTU" data-zh="南洋理工大学">NTU</span></span></a></li>
+      <li><div class="mate"><span class="mate-av" aria-hidden="true">WO</span><span><span class="mate-name">Weimin Ouyang</span><span class="mate-sub" data-en="PKU" data-zh="北京大学">PKU</span></span></div></li>
+      <li><a class="mate" href="https://haohaha-11.github.io/" target="_blank" rel="noopener"><span class="mate-av" aria-hidden="true">HJ</span><span><span class="mate-name">Hao Jiang<svg viewBox="0 0 12 12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3.500 8.500 8.500 3.500M4.500 3.500h4v4"/></svg></span><span class="mate-sub" data-en="UESTC" data-zh="电子科技大学">UESTC</span></span></a></li>
+    </ul>
+  </section>
+
   <section class="block" id="life">
     <h2 data-en="Life" data-zh="生活">Life</h2>
     <p class="tbu" data-en="To be updated." data-zh="待更新。">To be updated.</p>
@@ -543,7 +568,7 @@
   const spy = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting && Date.now() > locked && innerHeight + scrollY < document.documentElement.scrollHeight - 2) mark(navLinks.find(a => a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'news', 'publications', 'education', 'experience', 'life', 'blog'].forEach(id => spy.observe(document.getElementById(id)));
+  ['about', 'news', 'publications', 'education', 'experience', 'team', 'life', 'blog'].forEach(id => spy.observe(document.getElementById(id)));
 
   // reveal (content stays visible without JS, or if the tab starts hidden)
   if (!document.hidden) root.classList.add('js');
