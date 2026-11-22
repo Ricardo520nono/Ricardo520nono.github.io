@@ -4,6 +4,7 @@ Exits non-zero (and writes nothing) if the page cannot be fetched or parsed,
 so a blocked request never overwrites the last good numbers.
 """
 import datetime
+import html as htmllib
 import json
 import re
 import sys
@@ -23,7 +24,7 @@ HEADERS = {
 }
 html = ""
 for host in HOSTS:
-    url = f"https://{host}/citations?user={USER}&hl=en"
+    url = f"https://{host}/citations?user={USER}&hl=en&pagesize=100"
     try:
         html = urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=30).read().decode("utf-8", "replace")
     except Exception as e:  # noqa: BLE001
@@ -39,13 +40,26 @@ cells = [int(x) for x in re.findall(r'<td class="gsc_rsb_std">(\d+)</td>', html)
 if len(cells) < 6:
     sys.exit(f"could not find the stats table (got {len(cells)} cells)")
 
+papers = []
+for row in re.findall(r'<tr class="gsc_a_tr">(.*?)</tr>', html, re.S):
+    title = re.search(r'class="gsc_a_at">(.*?)</a>', row, re.S)
+    count = re.search(r'class="gsc_a_ac[^"]*">(\d*)</a>', row)
+    if title:
+        papers.append({
+            "title": htmllib.unescape(re.sub(r"<[^>]+>", "", title.group(1))).strip(),
+            "citations": int(count.group(1)) if count and count.group(1) else 0,
+        })
+if not papers:
+    sys.exit("could not find the list of papers")
+
 data = {
     "citations": cells[0],
     "h_index": cells[2],
     "i10_index": cells[4],
+    "papers": papers,
     "updated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d"),
 }
 with open(OUT, "w") as f:
     json.dump(data, f)
     f.write("\n")
-print(data)
+print({k: v for k, v in data.items() if k != "papers"}, len(papers), "papers")

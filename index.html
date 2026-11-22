@@ -150,13 +150,12 @@
   .team-lead { margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
   .team-lead a { color: var(--accent); font-weight: 600; white-space: nowrap; border-bottom: 1px solid transparent; transition: border-color .15s; }
   .team-lead a:hover { border-bottom-color: var(--accent); }
-  .pub-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 18px; }
-  .pub-head .team-lead { margin: 0; }
-  .cite-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 600; line-height: 18px; white-space: nowrap; transition: box-shadow .15s; animation: pop .4s ease-out; }
+  .cite-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink-2); font-size: 12.5px; font-weight: 600; white-space: nowrap; animation: pop .4s ease-out; }
   .cite-chip[hidden] { display: none; }
-  .cite-chip:hover { box-shadow: 0 0 0 1px var(--accent); }
-  .cite-chip svg { width: 14px; height: 14px; }
-  .cite-chip strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .pub-links a.cite-chip:hover { color: var(--accent); border-color: var(--accent); }
+  .pub-links .cite-chip svg { width: 13px; height: 13px; color: var(--accent); }
+  .cite-chip strong { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .pub-links a.cite-chip:hover strong { color: inherit; }
   .team-lead a svg { width: 11px; height: 11px; margin-left: 4px; vertical-align: 0; }
   .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
   @media (min-width: 641px) { .team-grid { margin-left: -18px; } }
@@ -356,10 +355,7 @@
 
   <section class="block" id="publications">
     <h2 data-en="Publications" data-zh="论文">Publications</h2>
-    <div class="pub-head">
-      <p class="team-lead" data-en="See all my publications on <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>." data-zh="完整论文列表见 <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>。">See all my publications on <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>.</p>
-      <a class="cite-chip" id="cite-chip" href="https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.910V17h2V9L12 3Zm-7 9.800V16c0 1.700 3.100 3.500 7 3.500s7-1.800 7-3.500v-3.200l-7 3.800-7-3.800Z"/></svg><strong id="cite-n"></strong><span data-en="citations" data-zh="次引用">citations</span></a>
-    </div>
+    <p class="team-lead" data-en="See all my publications on <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>." data-zh="完整论文列表见 <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>。">See all my publications on <a href='https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ' target='_blank' rel='noopener'>Google Scholar<svg viewBox='0 0 12 12' aria-hidden='true'><path fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M3.500 8.500 8.500 3.500M4.500 3.500h4v4'/></svg></a>.</p>
     <ul class="pub-list">
       <li class="pub">
         <button class="pub-media" type="button" data-open="worldecho-dlg" aria-label="Enlarge the WorldEcho teaser figure"><img src="assets/pubs/worldecho-teaser-thumb.jpg" alt="Teaser figure: WorldEcho diagnoses action following in world models, WorldSync improves it, and policy improvement validates it" width="720" height="376" loading="lazy"></button>
@@ -371,6 +367,7 @@
             <a href="https://arxiv.org/pdf/2608.24885" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg><span data-en="Paper" data-zh="论文">Paper</span></a>
             <a href="https://worldecho-worldsync.github.io/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-web"/></svg><span data-en="Project" data-zh="项目主页">Project</span></a>
             <a href="https://github.com/PKU-HMI-Lab/WorldEcho" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-code"/></svg><span data-en="Code" data-zh="代码">Code</span></a>
+            <a class="cite-chip" href="https://scholar.google.com/citations?user=Qw0Fh0EAAAAJ" target="_blank" rel="noopener" data-cite="do robotic world models really follow actions" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h7v7c0 3-1.800 5-5 5.500V16c1.300-.400 2-1.300 2-3H4V6Zm9 0h7v7c0 3-1.800 5-5 5.500V16c1.300-.400 2-1.300 2-3h-4V6Z"/></svg><strong></strong><span data-en="citations" data-zh="次引用">citations</span></a>
           </div>
         </div>
       </li>
@@ -569,16 +566,20 @@
     clearTimeout(b._h); b._h = setTimeout(() => { b.textContent = b._label; b._label = null; b.classList.remove('done'); }, 1400);
   }));
 
-  // live citation count: a daily GitHub Action writes scholar.json to the scholar-stats branch
+  // per-paper citation counts: scholar.json on the scholar-stats branch is refreshed daily
   const getJSON = (u, o) => fetch(u, o).then(r => r.ok ? r.json() : Promise.reject(r.status));
   getJSON('https://raw.githubusercontent.com/Ricardo520nono/Ricardo520nono.github.io/scholar-stats/scholar.json')
     .catch(() => getJSON('https://api.github.com/repos/Ricardo520nono/Ricardo520nono.github.io/contents/scholar.json?ref=scholar-stats', { headers: { Accept: 'application/vnd.github.raw+json' } }))
     .then(d => {
-      if (!d || !Number.isInteger(d.citations) || d.citations < 0) return;
-      $('#cite-n').textContent = d.citations.toLocaleString('en-US');
-      const chip = $('#cite-chip');
-      if (typeof d.updated === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d.updated)) chip.title = 'Google Scholar · updated ' + d.updated;
-      chip.hidden = false;
+      if (!d || !Array.isArray(d.papers)) return;
+      const dated = typeof d.updated === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d.updated);
+      $$('.cite-chip[data-cite]').forEach(chip => {
+        const paper = d.papers.find(x => typeof x.title === 'string' && x.title.toLowerCase().startsWith(chip.dataset.cite));
+        if (!paper || !Number.isInteger(paper.citations) || paper.citations < 1) return;
+        chip.querySelector('strong').textContent = paper.citations.toLocaleString('en-US');
+        if (dated) chip.title = 'Google Scholar · updated ' + d.updated;
+        chip.hidden = false;
+      });
     })
     .catch(() => {});
 
