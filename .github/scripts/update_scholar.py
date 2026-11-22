@@ -7,18 +7,34 @@ import datetime
 import json
 import re
 import sys
+import time
 import urllib.request
 
 USER = "Qw0Fh0EAAAAJ"
-URL = f"https://scholar.google.com/citations?user={USER}&hl=en"
 OUT = sys.argv[1] if len(sys.argv) > 1 else "scholar.json"
-
-req = urllib.request.Request(URL, headers={
+# Scholar often refuses requests from cloud servers, so try a few regional hosts.
+HOSTS = ["scholar.google.com", "scholar.google.co.uk", "scholar.google.com.hk",
+         "scholar.google.de", "scholar.google.com.sg", "scholar.google.ca"]
+HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
                   "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-})
-html = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
+}
+html = ""
+for host in HOSTS:
+    url = f"https://{host}/citations?user={USER}&hl=en"
+    try:
+        html = urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=30).read().decode("utf-8", "replace")
+    except Exception as e:  # noqa: BLE001
+        print(f"{host}: {e}")
+        time.sleep(3)
+        continue
+    if 'gsc_rsb_std' in html:
+        print(f"{host}: ok")
+        break
+    print(f"{host}: page without stats")
+    time.sleep(3)
 cells = [int(x) for x in re.findall(r'<td class="gsc_rsb_std">(\d+)</td>', html)]
 if len(cells) < 6:
     sys.exit(f"could not find the stats table (got {len(cells)} cells)")
