@@ -1,8 +1,8 @@
 name: Update Google Scholar stats
 
+# Google Scholar answers 403 to GitHub-hosted runners, so the daily schedule is off.
+# The stats are pushed to the scholar-stats branch from a machine Scholar accepts.
 on:
-  schedule:
-    - cron: "17 3 * * *"   # once a day
   workflow_dispatch:
 
 permissions:
