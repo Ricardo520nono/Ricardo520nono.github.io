@@ -1,0 +1,40 @@
+name: Update Google Scholar stats
+
+on:
+  schedule:
+    - cron: "17 3 * * *"   # once a day
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scholar-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch stats
+        run: python3 .github/scripts/update_scholar.py "$RUNNER_TEMP/scholar.json"
+      - name: Publish to the scholar-stats branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin scholar-stats >/dev/null; then
+            git fetch --depth=1 origin scholar-stats
+            git checkout -q -B scholar-stats FETCH_HEAD
+          else
+            git checkout -q --orphan scholar-stats
+            git rm -rf -q .
+          fi
+          cp "$RUNNER_TEMP/scholar.json" scholar.json
+          git add scholar.json
+          if git diff --cached --quiet; then
+            echo "No change."
+          else
+            git commit -q -m "Update Scholar stats"
+            git push -q origin scholar-stats
+          fi
