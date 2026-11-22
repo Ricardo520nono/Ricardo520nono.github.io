@@ -568,7 +568,7 @@
 
   // per-paper citation counts: scholar.json on the scholar-stats branch is refreshed daily
   const getJSON = (u, o) => fetch(u, o).then(r => r.ok ? r.json() : Promise.reject(r.status));
-  getJSON('https://raw.githubusercontent.com/Ricardo520nono/Ricardo520nono.github.io/scholar-stats/scholar.json?h=' + Math.floor(Date.now() / 36e5))
+  getJSON('https://raw.githubusercontent.com/Ricardo520nono/Ricardo520nono.github.io/refs/heads/scholar-stats/scholar.json?h=' + Math.floor(Date.now() / 36e5), { cache: 'no-cache' })
     .catch(() => getJSON('https://api.github.com/repos/Ricardo520nono/Ricardo520nono.github.io/contents/scholar.json?ref=scholar-stats', { headers: { Accept: 'application/vnd.github.raw+json' } }))
     .then(d => {
       if (!d || !Array.isArray(d.papers)) return;
