@@ -135,6 +135,10 @@
   .edu + .edu { border-top: 1px solid var(--line); }
   .edu-logo { display: flex; align-items: center; justify-content: center; height: 64px; }
   .edu-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; }
+  .edu-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-bottom: 3px; }
+  .edu-head .edu-name { margin: 0; }
+  .edu-tags { display: inline-flex; flex-wrap: wrap; gap: 5px; }
+  .chip { padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--card-2); color: var(--ink-2); font: 600 11.5px/16px Inter, "PingFang SC", sans-serif; white-space: nowrap; }
   .edu-name { margin: 0 0 3px; font: 600 17px/1.4 Inter, "PingFang SC", sans-serif; letter-spacing: -.1px; color: var(--ink); }
   .edu-role { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
   .edu-role strong { color: var(--ink); font-weight: 600; }
@@ -441,7 +445,7 @@
       <li class="edu">
         <div class="edu-logo"><img src="assets/edu/uestc.png" alt="University of Electronic Science and Technology of China logo" width="340" height="77" loading="lazy"></div>
         <div>
-          <h3 class="edu-name" data-en="University of Electronic Science and Technology of China (UESTC)" data-zh="电子科技大学（UESTC）">University of Electronic Science and Technology of China (UESTC)</h3>
+          <div class="edu-head"><h3 class="edu-name" data-en="University of Electronic Science and Technology of China (UESTC)" data-zh="电子科技大学（UESTC）">University of Electronic Science and Technology of China (UESTC)</h3><span class="edu-tags"><span class="chip">985</span><span class="chip">211</span><span class="chip" data-en="Double First-Class" data-zh="双一流">Double First-Class</span></span></div>
           <p class="edu-role" data-en="<strong>Bachelor's Degree</strong>, dual degree with the University of Glasgow" data-zh="<strong>学士学位</strong>，与格拉斯哥大学双学位"><strong>Bachelor's Degree</strong>, dual degree with the University of Glasgow</p>
           <p class="edu-note" data-en="Outstanding Undergraduate Thesis (Top 1%)" data-zh="校级优秀本科毕业论文（Top 1%）">Outstanding Undergraduate Thesis (Top 1%)</p>
         </div>
@@ -450,7 +454,7 @@
       <li class="edu">
         <div class="edu-logo"><img src="assets/edu/glasgow.png" alt="University of Glasgow logo" width="480" height="150" loading="lazy"></div>
         <div>
-          <h3 class="edu-name" data-en="University of Glasgow (UofG)" data-zh="格拉斯哥大学（UofG）">University of Glasgow (UofG)</h3>
+          <div class="edu-head"><h3 class="edu-name" data-en="University of Glasgow (UofG)" data-zh="格拉斯哥大学（UofG）">University of Glasgow (UofG)</h3><span class="edu-tags"><span class="chip" data-en="QS Top 100" data-zh="QS 前 100">QS Top 100</span></span></div>
           <p class="edu-role" data-en="<strong>Bachelor's Degree</strong>, dual degree with UESTC" data-zh="<strong>学士学位</strong>，与电子科技大学双学位"><strong>Bachelor's Degree</strong>, dual degree with UESTC</p>
         </div>
         <div class="edu-when"><time data-en="2022.09 – 2026.06" data-zh="2022.09 – 2026.06">2022.09 – 2026.06</time><span data-en="Glasgow" data-zh="格拉斯哥">Glasgow</span></div>
@@ -465,8 +469,7 @@
         <div class="edu-logo"><img src="assets/exp/x-humanoid.png" alt="X-Humanoid logo" width="480" height="161" loading="lazy"></div>
         <div>
           <h3 class="edu-name" data-en="Beijing Innovation Center of Humanoid Robotics (X-Humanoid)" data-zh="北京人形机器人创新中心（X-Humanoid）">Beijing Innovation Center of Humanoid Robotics (X-Humanoid)</h3>
-          <p class="edu-role" data-en="<strong>Research Intern</strong>, Joint Lab" data-zh="<strong>研究实习生</strong>，联合实验室"><strong>Research Intern</strong>, Joint Lab</p>
-          <p class="edu-note" data-en="Embodied AI large-model algorithms" data-zh="具身大模型算法">Embodied AI large-model algorithms</p>
+          <p class="edu-role" data-en="<strong>Embodied AI Large Model Algorithm Intern</strong>, Joint Lab" data-zh="<strong>具身大模型算法实习生</strong>，联合实验室"><strong>Embodied AI Large Model Algorithm Intern</strong>, Joint Lab</p>
         </div>
         <div class="edu-when"><time data-en="2026.07 – 2026.11" data-zh="2026.07 – 2026.11">2026.07 – 2026.11</time><span data-en="Beijing" data-zh="北京">Beijing</span></div>
       </li>
